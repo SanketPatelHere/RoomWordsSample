@@ -6,4 +6,9 @@
         android:title="@string/action_settings"
         android:orderInCategory="100"
         app:showAsAction="never" />
+    <item
+        android:id="@+id/clear_data"
+        android:orderInCategory="100"
+        android:title="Clear All Data"
+        app:showAsAction="never" />
 </menu>

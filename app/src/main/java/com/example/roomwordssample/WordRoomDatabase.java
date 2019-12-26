@@ -52,11 +52,15 @@ public abstract class WordRoomDatabase extends RoomDatabase {
 
         @Override
         protected Void doInBackground(Void... voids) {
-            mDao.deleteAll();
+            //mDao.deleteAll();  //remove new added data when reopen app
 
-            for (int i = 0; i <= words.length - 1; i++) {
-                Word word = new Word(words[i]);
-                mDao.insert(word);
+            if(mDao.getAnyWord().length<1)
+            {
+                for (int i = 0; i <= words.length - 1; i++)
+                {
+                    Word word = new Word(words[i]);
+                    mDao.insert(word);
+                }
             }
             return null;
         }
